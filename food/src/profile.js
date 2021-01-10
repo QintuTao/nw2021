@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import "./profile.css"
+import broccoli_left from './broccoli_left.png'
 
 class Profile extends Component {
     state = {
@@ -7,35 +9,44 @@ class Profile extends Component {
         age: 10,
         height: 140,
         weight: 70,
-        imageUrl: 'https://img2.pngio.com/broccoli-png-image-free-broccoli-pictures-download-broccoli-cartoon-broccoli-png-2400_2328.png'
     };
     render() {
         return (
-            <div>
-                <img src={this.state.imageUrl} width="100px" height="100px" alt=""/>
-                <h4>
-                    name:
-                    <textarea id="myTextarea">{this.state.name}</textarea>
+            <div className="profile">
+                <span class="circle">
+                    <img src={broccoli_left} class="broccoli" alt=""/>
+                </span>
+                
+                <h4 class="topfield">
+                    <span class="text">name</span>
+                    <textarea id="myTextarea" cols="50">{this.state.name}</textarea>
                 </h4>
-                <h4>
-                    email:
-                    <textarea id="myTextarea">{this.state.email}</textarea>
+                <h4 class="topfield">
+                    <span class="text">email</span>
+                    <textarea id="myTextarea" cols="50">{this.state.email}</textarea>
                 </h4>
-                <h1>Personal Information</h1>
-                <h4>
-                    age:
-                    <textarea id="myTextarea">{this.state.age}</textarea>
+                <h2>
+                    <span class="divider">Personal Information</span>
+                    <button class="edit">edit</button>
+                    <hr class="line"/>
+                </h2>
+                <h4 class="bottomfield">
+                    <span class="text">age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <textarea id="myTextarea" cols="50">{this.state.age}</textarea>
                 </h4>
-                <h4>
-                    height:
-                    <textarea id="myTextarea">{this.state.height}</textarea>
+                <h4 class="bottomfield">
+                    <span class="text">height&nbsp;</span>
+                    <textarea id="myTextarea" cols="50">{this.state.height}</textarea>
                 </h4>
-                <h4>
-                    weight:
-                    <textarea id="myTextarea">{this.state.weight}</textarea>
+                <h4 class="bottomfield">
+                    <span class="text">weight</span>
+                    <textarea id="myTextarea" cols="50">{this.state.weight}</textarea>
                 </h4>
-                <button>submit</button>
+                <footer class = "sticky">
+      
+                </footer>
             </div>
+
         );
     }
 }

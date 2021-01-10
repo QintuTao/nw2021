@@ -8,7 +8,7 @@ import 'tachyons';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Profile />
   </React.StrictMode>,
   document.getElementById('root')
 );
