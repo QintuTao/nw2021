@@ -1,0 +1,13 @@
+nav {
+    display: 'flex';
+    direction: vertical;
+    justify-content: 'flex-start';
+    /* background-color: red; */
+    font-size: 42;
+    width: 50px;
+    height: 100vh;
+}
+
+li {
+    list-style: none;
+}
