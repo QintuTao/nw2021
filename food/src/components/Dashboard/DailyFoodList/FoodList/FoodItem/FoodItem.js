@@ -22,11 +22,11 @@ class FoodItem extends Component {
         var index = parseInt(this.props.index);
         this.props.removeItem(index);
     }
-    setFoodRecord(name, category, serving) {
-        this.name = name;
-        this.category = category;
-        this.serving = serving;
-    }
+    // setFoodRecord(name, category, serving) {
+    //     this.name = name;
+    //     this.category = category;
+    //     this.serving = serving;
+    // }
     getNutritionalInfo() {
         fetch('www.fatsecret.com', {
             method: 'fetch',
