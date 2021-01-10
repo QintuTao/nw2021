@@ -19,7 +19,7 @@ class FoodList extends React.Component {
       );
     });
     const nutrition = new Nutrition()
-    nutrition.getResponse()
+
     return (
       <ul className="foodlist"> {items} </ul>
     );

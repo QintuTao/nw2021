@@ -46,7 +46,6 @@ class FoodItem extends Component {
  
     render() {
         let nutrition = new Nutrition()
-        nutrition.getResponse()
         console.log(234)
         return (
             <li class="dt w-100 bb b--black-05 pb2 mt2 food" href="#0">
