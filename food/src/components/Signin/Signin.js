@@ -11,7 +11,7 @@ class Signin extends React.Component {
     super(props)
 
     this.state = {
-      status: 0
+      doesUserExist: true
     }
 
     /* react references to DOM elements */
@@ -26,17 +26,29 @@ class Signin extends React.Component {
     db.lookupUser(email)
   }
 
-  handleSignIn(event) {
+  async handleSignIn(event) {
+    
     const email     = this.refToEmail.current.value;
     const password  = this.refToPassword.current.value;
 
-    console.log(db.signupUser(email));
+    /* check if email already exist */
+    const res = await db.lookupUser(email)
+    this.setState({
+      doesUserExist: res
+    })
+
+    /* signIn if yes */
+    
   }
 
   render() {
     const { onRouteChange } = this.props;
+    let doesUserExist = this.state.doesUserExist
+
+    console.log("ii" + doesUserExist)
     return (
         <div className="pa4 black-80 background-box">
+          
           <div className="measure">
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
               <legend className="f1 fw6 ph0 mh0">Sign In</legend>
@@ -73,12 +85,9 @@ class Signin extends React.Component {
               />
             </div>
             <div className="lh-copy mt3">
-                <p onClick={() => onRouteChange('register')} className="f6 link dim black db pointer">
-                    Don't have an account? Register!
-                </p>
-                    {/* <Link to ="/Register" class="f6 link dim black db">Don't have an account? Register!</Link> */}
-                    {/* <Route path = "/Register" component = {/components/Register}/> */}
-                {/* <a href="#0" class="f6 link dim black db">Forgot your password?</a> */}
+              <p onClick={() => onRouteChange('register')} className="f6 link dim black db pointer">
+                {doesUserExist ? "Dont't have an account? Register!" : "Seems like you don't have an account! Please Register"}
+              </p>            
             </div>
           </div>
         </div>
