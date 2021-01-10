@@ -1,4 +1,5 @@
-import {React, Component} from 'react';
+import React, { Component } from 'react';
+import DailyFoodList from './DailyFoodList/DailyFoodList';
 import "./Dashboard.css";
 
 class Dashboard extends Component {
@@ -7,8 +8,8 @@ class Dashboard extends Component {
             <div> 
                 <h1>Dashboard</h1>
                 <div>
-                    <div>
-
+                    <div className = "left">
+                        <DailyFoodList />
                     </div>
                     <div>
 
