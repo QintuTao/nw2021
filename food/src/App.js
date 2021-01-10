@@ -73,6 +73,7 @@ class App extends Component {
     const { isSignedIn, route} = this.state;
     return (
       <div className="App">
+        {/* <canvas id="projector">Your browser does not support the Canvas element.</canvas> */}
         <NavBar isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
           { route === 'signin' ?
             <div className="center">

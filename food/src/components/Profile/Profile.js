@@ -33,10 +33,13 @@ class Profile extends Component {
                     <textarea id="myTextarea" cols="50">{this.state.email}</textarea>
                 </h4>
                 <h2>
-                    <span class="divider">Personal Information</span>
-                    <button onClick={this.saveInfo}
-                    className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib">save</button>
-                    <hr class="line"/>
+                    <div className = "row">
+                        <span class="divider">Personal Information</span>
+                        <button onClick={this.saveInfo}
+                        className="save b pv2 input-reset ba b--black bg-transparent grow pointer f6"
+                        >save</button>
+                        <hr class="line"/>
+                    </div>
                 </h2>
                 <h4 class="bottomfield">
                     <span class="text">age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
