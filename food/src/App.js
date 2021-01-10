@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
+import NavBar from './components/NavBar/NavBar';
 import Profile from './components/Profile/Profile';
 import Dashboard from './components/Dashboard/Dashboard';
 import {BrowserRouter as Router, Link } from "react-router-dom";
@@ -45,7 +46,7 @@ class App extends Component {
       imageUrl: '',
       box: {},
       route: 'profile',
-      isSignedIn: false,
+      isSignedIn: true,
       user: {
         name: '',
         email: '',
@@ -62,7 +63,7 @@ class App extends Component {
   onRouteChange = (route) => {
     if (route === 'signout') {
       this.setState({isSignedIn: false})
-    } else if (route === 'dashboard') {
+    } else if (route === 'dashboard' || route === 'profile') {
       this.setState({isSignedIn: true})
     }
     this.setState({route: route});
@@ -72,29 +73,31 @@ class App extends Component {
     const { isSignedIn, route} = this.state;
     return (
       <div className="App">
-        
+        <NavBar isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
           { route === 'signin' ?
-            // <div className="center">
+            <div className="center">
               <Signin 
               // loadUser={this.loadUser} 
               onRouteChange={this.onRouteChange}
               />
+            </div>
             : route === 'register' ? 
-              // <div className="center">
+              <div className="center">
                 <Register 
                 // loadUser={this.loadUser} 
                 onRouteChange={this.onRouteChange}
                 />
-              // </div>
-            : 
-            route === 'profile' ?
+              </div>
+            : route === 'profile' ?
               <Profile />
             : route === "dashboard" ?
               <Dashboard /> : 
             <div className="center"> 
+              <div className="center">
               <Signin 
                 onRouteChange={this.onRouteChange}
               />
+              </div>
             </div>
           }
         
