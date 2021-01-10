@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+// import firebase from './db/firebase';
 import React, { Component } from 'react';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
