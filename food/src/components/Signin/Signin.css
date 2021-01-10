@@ -1,0 +1,23 @@
+
+.background-box {
+    background-color: #E8F3E2;
+    width: 40vw;
+    text-align: left;
+    margin: auto;
+    box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+}
+#sign-in {
+    border-width: 0px;
+    padding: 3%;
+    display: block;
+}
+.input-field-container {
+    background-color: red;
+    width: 90%;
+    padding: 5%;
+    display: ;
+}
+input {
+    background-color: white;
+    border: 0px;
+} 
