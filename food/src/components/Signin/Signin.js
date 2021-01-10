@@ -20,6 +20,8 @@ class Signin extends React.Component {
 
     /* bind this to functions */
     this.handleSignIn = this.handleSignIn.bind(this)
+
+    this.onRouteChange = this.props.onRouteChange;
   }
 
   validateEmail(email) {
@@ -38,9 +40,13 @@ class Signin extends React.Component {
     })
 
     /* signIn if yes */
+<<<<<<< HEAD
     if (!doesExist) return;
 
     const passwordCheck = await db.signinUser(email.password)
+=======
+    this.onRouteChange('profile');
+>>>>>>> 6d721d3e87fc4b899e6f976eac1c388ac3ea54ce
   }
 
   render() {
@@ -50,7 +56,6 @@ class Signin extends React.Component {
     console.log("ii" + doesUserExist)
     return (
         <div className="pa4 black-80 background-box">
-          
           <div className="measure">
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
               <legend className="f1 fw6 ph0 mh0">Sign In</legend>
