@@ -6,7 +6,7 @@
     margin: auto;
     box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
 }
-#sign-in {
+/* #sign-in {
     border-width: 0px;
     padding: 3%;
     display: block;
@@ -15,8 +15,7 @@
     background-color: red;
     width: 90%;
     padding: 5%;
-    display: ;
-}
+} */
 input {
     background-color: white;
     border: 0px;
