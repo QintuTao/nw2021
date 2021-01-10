@@ -1,4 +1,7 @@
 import firebase from 'firebase';
+import React, { Component } from 'react';
+import Signin from './components/Signin/Signin';
+import Register from './components/Register/Register';
 import './App.css';
 
 function App() {
@@ -19,19 +22,14 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="center">
+        <Signin 
+        // loadUser={this.loadUser} onRouteChange={this.onRouteChange}
+        />
+      </div>
+      <footer class = "sticky">
+    
+      </footer>
     </div>
   );
 }
