@@ -2,6 +2,7 @@ import firebase from 'firebase';
 import React, { Component } from 'react';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
+import Profile from './components/Profile/Profile';
 import Dashboard from './components/Dashboard/Dashboard';
 import {BrowserRouter as Router, Link } from "react-router-dom";
 import './App.css';
@@ -43,7 +44,7 @@ class App extends Component {
       input: '',
       imageUrl: '',
       box: {},
-      route: 'signin',
+      route: 'profile',
       isSignedIn: false,
       user: {
         name: '',
