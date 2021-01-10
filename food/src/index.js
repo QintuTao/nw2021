@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-// import Profile from './components/Profile/Profile';
+import DailyFoodList from './components/Dashboard/DailyFoodList/DailyFoodList';
 import reportWebVitals from './reportWebVitals';
 import 'tachyons';
 
