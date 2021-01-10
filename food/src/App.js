@@ -3,16 +3,31 @@ import './App.css';
 
 function App() {
 
-  var config = {
-    apiKey: " AIzaSyBsQhiBeBxUxQw744BHlQfEPty5aUhbLY4 ",
+  const firebaseConfig = {
+    apiKey: "AIzaSyBsQhiBeBxUxQw744BHlQfEPty5aUhbLY4",
     authDomain: "n-tri-569d8.firebaseapp.com",
-    databaseURL: "https://n-tri-569d8-default-rtdb.firebaseio.com/",
-    storageBucket: "gs://n-tri-569d8.appspot.com/"
+    databaseURL: "https://n-tri-569d8-default-rtdb.firebaseio.com",
+    projectId: "n-tri-569d8",
+    storageBucket: "n-tri-569d8.appspot.com",
+    messagingSenderId: "625441764832",
+    appId: "1:625441764832:web:ace3552467d5d7b2db6785",
+    measurementId: "G-C7EF5TGRG5"
   };
-  firebase.initializeApp(config);
+
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
 
   // Get a reference to the database service
   var database = firebase.database();
+
+  database.ref('user1').set(
+    {
+      username: "quinn",
+      email: 'qintu@breadonmars.com',
+      gender: 'Male'
+    }
+  );
 
   // Set the configuration for your app
   // TODO: Replace with your project's config object
