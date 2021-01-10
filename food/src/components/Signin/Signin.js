@@ -1,17 +1,37 @@
 import React from 'react';
+import db from '../../db/database'
 import ReactDOM from "react-dom";
 import './Signin.css';
 import {BrowserRouter as Router, Link, Route } from "react-router-dom";
   
 
 class Signin extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       signInEmail: '',
-//       signInPassword: ''
-//     }
-//   }
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      status: 0
+    }
+
+    /* react references to DOM elements */
+    this.refToEmail       = React.createRef();
+    this.refToPassword    = React.createRef();
+
+    /* bind this to functions */
+    this.handleSignIn = this.handleSignIn.bind(this)
+  }
+
+  validateEmail(email) {
+    db.lookupUser(email)
+  }
+
+  handleSignIn(event) {
+    const email     = this.refToEmail.current.value;
+    const password  = this.refToPassword.current.value;
+
+    console.log(db.signupUser(email));
+  }
 
   render() {
     const { onRouteChange } = this.props;
@@ -27,23 +47,26 @@ class Signin extends React.Component {
                   type="email"
                   name="email-address"
                   id="email-address"
-                //   onChange={this.onEmailChange}
+                  ref={this.refToEmail}
+                  onChange={this.onEmailChange}
                 />
               </div>
               <div className="mt3">
+                
                 <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
                 <input
                   className="b pa2 input-reset hover-black w-100"
                   type="password"
                   name="password"
                   id="password"
-                //   onChange={this.onPasswordChange}
+                  ref={this.refToPassword}
+                  onChange={this.onPasswordChange}
                 />
               </div>
             </fieldset>
             <div className="">
               <input
-                onClick={this.onSubmitSignIn}
+                onClick={this.handleSignIn}
                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                 type="submit"
                 value="Sign in"

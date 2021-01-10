@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+// import firebase from './db/firebase';
 import React, { Component } from 'react';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
@@ -45,7 +45,7 @@ class App extends Component {
       input: '',
       imageUrl: '',
       box: {},
-      route: 'dashboard',
+      route: 'profile',
       isSignedIn: true,
       user: {
         name: '',
@@ -88,8 +88,7 @@ class App extends Component {
                 onRouteChange={this.onRouteChange}
                 />
               </div>
-            : 
-            route === 'profile' ?
+            : route === 'profile' ?
               <Profile />
             : route === "dashboard" ?
               <Dashboard /> : 

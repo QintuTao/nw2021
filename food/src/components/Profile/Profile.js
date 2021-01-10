@@ -27,7 +27,7 @@ class Profile extends Component {
                 </h4>
                 <h2>
                     <span class="divider">Personal Information</span>
-                    <button class="edit">edit</button>
+                    <button class="save">save</button>
                     <hr class="line"/>
                 </h2>
                 <h4 class="bottomfield">

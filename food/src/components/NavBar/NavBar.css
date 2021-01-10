@@ -6,6 +6,8 @@ nav {
     font-size: 42;
     width: 50px;
     height: 100vh;
+    position: absolute;
+    left: 0px;
 }
 
 li {
