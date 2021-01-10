@@ -13,12 +13,12 @@ class Dashboard extends Component {
     constructor () {
         super()
         this.state = {
-            totalCalories: 0,
-            totalCarbs: 0,
-            totalProtein: 0,
-            totalFat: 0,
-            totalVitamin: 0,
-            totalMinerals: 0
+            totalCalories: 20,
+            totalCarbs: 20,
+            totalProtein: 20,
+            totalFat: 20,
+            totalVitamin: 20,
+            totalMinerals: 20
         }
     }
     render() {
@@ -30,7 +30,7 @@ class Dashboard extends Component {
                         <DailyFoodList foodItems = {foodItems}/>
                     </div>
                     <div className = "column right">
-                        <Chart />
+                        <Chart total_info = {this.state}/>
                     </div>
                 </div>
             </div>

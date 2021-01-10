@@ -12,7 +12,6 @@ class FoodItem extends Component {
         this.category = props.category;
         this.serving = props.serving;
         
-        
         this.calories = 5;
         this.carbs = 0;
         this.fat = 0;

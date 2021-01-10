@@ -40,15 +40,15 @@ class Profile extends Component {
                 </h2>
                 <h4 class="bottomfield">
                     <span class="text">age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <textarea id="myTextarea" cols="50">{this.state.age}</textarea>
+                    <textarea id="myTextarea" cols="50">{this.state.age}</textarea> yrs
                 </h4>
                 <h4 class="bottomfield">
                     <span class="text">height&nbsp;</span>
-                    <textarea id="myTextarea" cols="50">{this.state.height}</textarea>
+                    <textarea id="myTextarea" cols="50">{this.state.height}</textarea> cm
                 </h4>
                 <h4 class="bottomfield">
                     <span class="text">weight</span>
-                    <textarea id="myTextarea" cols="50">{this.state.weight}</textarea>
+                    <textarea id="myTextarea" cols="50">{this.state.weight}</textarea> kg
                 </h4>
                 <footer class = "sticky">
       

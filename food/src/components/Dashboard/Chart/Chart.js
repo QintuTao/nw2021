@@ -2,7 +2,7 @@ import React from 'react';
 import "./Chart.css";
 import { Doughnut } from 'react-chartjs-2';
 
-const state = {
+var state = {
     labels: ['Carbs', 'Fat', 'Protein',
              'Vitamin', 'Mineral'],
     datasets: [
@@ -30,7 +30,11 @@ const state = {
   export default class Chart extends React.Component {
     constructor(props) {
       super(props);
-      state.datasets.data = [props.totalCarbs, props.totalFat, props.totalProtein, props.totalVitamins, props.totalMinerals]
+      state.datasets.data = [props.total_info.totalCarbs, 
+        props.total_info.totalFat, 
+        props.total_info.totalProtein, 
+        props.total_info.totalVitamins, 
+        props.totalMinerals]
     }
     render() {
       return (
