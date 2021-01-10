@@ -9,18 +9,18 @@ const state = {
       {
         label: 'Nutritional Values',
         backgroundColor: [
-          '#B21F00',
-          '#C9DE00',
-          '#2FDE00',
-          '#00A6B4',
-          '#6800B4'
+          '#FFB347',
+          '#E6F69D',
+          '#AADEA7',
+          '#64C2A6',
+          '#2D87BB'
         ],
         hoverBackgroundColor: [
-        '#501800',
-        '#4B5000',
-        '#175000',
-        '#003350',
-        '#35014F'
+          '#FFB347',
+          '#E6F69D',
+          '#AADEA7',
+          '#64C2A6',
+          '#2D87BB'
         ],
         data: [120, 80, 90, 20, 20]
       }
@@ -28,6 +28,10 @@ const state = {
   }
   
   export default class Chart extends React.Component {
+    constructor(props) {
+      super(props);
+      state.datasets.data = [props.totalCarbs, props.totalFat, props.totalProtein, props.totalVitamins, props.totalMinerals]
+    }
     render() {
       return (
         <div>
