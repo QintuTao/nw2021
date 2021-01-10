@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "./profile.css"
+import "./Profile.css"
 import broccoli_left from './broccoli_left.png'
 
 class Profile extends Component {

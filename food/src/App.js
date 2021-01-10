@@ -72,32 +72,32 @@ class App extends Component {
     const { isSignedIn, route} = this.state;
     return (
       <div className="App">
-          {route === 'signin' ?
-            <div className="center">
+        
+          { route === 'signin' ?
+            // <div className="center">
               <Signin 
               // loadUser={this.loadUser} 
               onRouteChange={this.onRouteChange}
               />
-            </div>
             : route === 'register' ? 
-            <div className="center">
-              <Register 
-              // loadUser={this.loadUser} 
-              onRouteChange={this.onRouteChange}
-              />
-              </div>
-            : route === 'profile' ?
+              // <div className="center">
+                <Register 
+                // loadUser={this.loadUser} 
+                onRouteChange={this.onRouteChange}
+                />
+              // </div>
+            : 
+            route === 'profile' ?
               <Profile />
             : route === "dashboard" ?
-              <Dashboard />
-            : <div className="center">
+              <Dashboard /> : 
+            <div className="center"> 
               <Signin 
-              // loadUser={this.loadUser} 
-              onRouteChange={this.onRouteChange}
+                onRouteChange={this.onRouteChange}
               />
-            }
-          </div>
-        }
+            </div>
+          }
+        
         <footer class = "sticky">
         </footer>
       </div>
