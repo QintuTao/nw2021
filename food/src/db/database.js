@@ -9,14 +9,16 @@ const USER_DIRECTORY                = 'users'
  */
 class DB {
 
-  lookupUser(email) {
+  /**
+   * @returns true if email exists in db 
+   * @param {string} email 
+   */
+  async lookupUser(email) {
     
-    const data = firebase.database().ref(USER_DIRECTORY).get(email).then(()=>{
-      console.log(data)
-    })
-    console.log(data)
-    if (data == null || data == undefined) return false
-    return true
+    const uid = this.emailSerialize(email)
+
+    const data = (await firebase.database().ref(USER_DIRECTORY).get()).child(uid)
+    return !(data.key == undefined || data.val() == null) 
 
   }
 
@@ -26,7 +28,14 @@ class DB {
 
   signupUser(email, password) {
     const dbRoot = firebase.database().ref()
-    
+
+  }
+
+  /** Helpers */
+  emailSerialize(email) {
+    return email.split('').map(char => {
+      return (char == '.') ? "%dot%" : (char == '@') ? "%at%" : char
+    }).join("")
   }
 }
 
