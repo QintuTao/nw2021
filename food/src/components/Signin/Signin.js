@@ -40,13 +40,7 @@ class Signin extends React.Component {
     })
 
     /* signIn if yes */
-<<<<<<< HEAD
-    if (!doesExist) return;
-
-    const passwordCheck = await db.signinUser(email.password)
-=======
     this.onRouteChange('profile');
->>>>>>> 6d721d3e87fc4b899e6f976eac1c388ac3ea54ce
   }
 
   render() {
