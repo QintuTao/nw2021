@@ -1,0 +1,24 @@
+.row {
+    display: flex;
+    width: 100%;
+    /* background-color: yellow; */
+}
+.input-info {
+    width: 80%;
+    /* background-color:; */
+}
+.foodformfield {
+    text-align: left;
+    width: 80%;
+    margin: 2%;
+}
+label {
+    text-align: left;
+    padding: 10px;
+}
+.potential-img {
+    text-align:right;
+    width: 20%;
+    /* margin: 5%; */
+    /* background-color: white; */
+}
