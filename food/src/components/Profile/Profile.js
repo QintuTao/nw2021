@@ -6,13 +6,14 @@ class Profile extends Component {
     state = {
         name: "a",
         email: "abc@gmail.com",
-        age: 10,
-        height: 140,
-        weight: 70,
+        age: "10 yrs",
+        height: "140 cm",
+        weight: "40 kg",
     };
     render() {
         return (
             <div className="profile">
+                <h1>Profile</h1>
                 <span class="circle">
                     <img src={broccoli_left} class="broccoli" alt=""/>
                 </span>

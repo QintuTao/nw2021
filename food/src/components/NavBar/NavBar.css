@@ -1,15 +1,37 @@
-nav {
-    display: 'flex';
-    direction: vertical;
-    justify-content: 'flex-start';
-    /* background-color: red; */
-    font-size: 42;
-    width: 50px;
-    height: 100vh;
-    position: absolute;
-    left: 0px;
+.button {
+    background-color: #C7E5B9;
+    color: white;
+    padding: 20px 44px;
+    font-size: 30px;
+    border: none;
 }
 
-li {
+.menu {
+    position: absolute;
+    left: 0px;
+    top: 21px;
+  }
+
+.menu-content {
+    display: none;
+    position: absolute;
+    background-color: #C7E5B9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .menu-content li {
+    color: black;
+    font-size: 26;
+    padding: 20px 5px;
+    display: block;
+  }
+
+/*li {
     list-style: none;
-}
+}*/
+
+.menu:hover .menu-content {display: block;}
+
+.menu:hover .button {background-color: #3e8e41;}
