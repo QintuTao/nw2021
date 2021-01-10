@@ -1,9 +1,15 @@
 .container {
     margin: 5%;
     margin-left: 10%;
+    width: 35vw;
+    background-color: #EDF1E9;
+    padding: 2%;
 }
 .foodlist {
-    width: 40vw;
+    width: 30vw;
+    margin: auto;
+    background-color: white;
+    padding-top: 5px;
     /* text-align:left; */
 }
 
