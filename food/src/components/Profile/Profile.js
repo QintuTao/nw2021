@@ -3,13 +3,19 @@ import "./Profile.css"
 import broccoli_left from './broccoli_left.png'
 
 class Profile extends Component {
-    state = {
-        name: "a",
-        email: "abc@gmail.com",
-        age: "10 yrs",
-        height: "140 cm",
-        weight: "40 kg",
-    };
+    constructor() {
+        super();
+        this.state = {
+            name: "a",
+            email: "abc@gmail.com",
+            age: 10,
+            height: 140,
+            weight: 40,
+        };
+    }
+    saveInfo() {
+        
+    }
     render() {
         return (
             <div className="profile">
@@ -28,7 +34,8 @@ class Profile extends Component {
                 </h4>
                 <h2>
                     <span class="divider">Personal Information</span>
-                    <button class="save">save</button>
+                    <button onClick={this.saveInfo}
+                    className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib">save</button>
                     <hr class="line"/>
                 </h2>
                 <h4 class="bottomfield">

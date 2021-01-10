@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DailyFoodList from './DailyFoodList/DailyFoodList';
+import Chart from './Chart/Chart'
 import "./Dashboard.css";
 
 var foodItems = [];
@@ -24,12 +25,12 @@ class Dashboard extends Component {
         return (
             <div> 
                 <h1>Dashboard</h1>
-                <div className = "row">
-                    <div className = "left">
+                <div>
+                    <div className = "column left">
                         <DailyFoodList foodItems = {foodItems}/>
                     </div>
-                    <div className = "right">
-
+                    <div className = "column right">
+                        <Chart />
                     </div>
                 </div>
             </div>
