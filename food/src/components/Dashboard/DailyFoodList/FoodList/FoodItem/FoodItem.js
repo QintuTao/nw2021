@@ -1,59 +1,55 @@
 import {React, Component} from 'react';
 import "./FoodItem.css";
 import broccoli_left from './broccoli_right.png'
+import Nutrition from '../../../../../db/nutrition';
 
 class FoodItem extends Component {
     
     constructor (props){
-        console.log(props);
+
         super(props);
         this.onClickClose = this.onClickClose.bind(this);
         this.name = props.name;
         this.category = props.category;
         this.serving = props.serving;
-        
-        
+
         this.calories = 5;
         this.carbs = 0;
         this.fat = 0;
         this.protein = 0;
     }
+
     onClickClose() {
         var index = parseInt(this.props.index);
         this.props.removeItem(index);
     }
+
     setFoodRecord(name, category, serving) {
         this.name = name;
         this.category = category;
         this.serving = serving;
     }
+
     getNutritionalInfo() {
-        fetch('www.fatsecret.com', {
-            method: 'fetch',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-              id: this.state.user.id
-            })
-          })
-            .then(response => response.json())
-            .then(count => {
-              this.setState(Object.assign(this.state.user, { entries: count}))
-            })
+        // fetch('www.fatsecret.com', {
+        //     method: 'fetch',
+        //     headers: {'Content-Type': 'application/json'},
+        //     body: JSON.stringify({
+        //       id: this.state.user.id
+        //     })
+        //   })
+        //     .then(response => response.json())
+        //     .then(count => {
+        //       this.setState(Object.assign(this.state.user, { entries: count}))
+        //     })
+
+        
     }
-    // render () {
-    //     var todoClass = this.props.item.done ? 
-    //         "done" : "undone";
-    //     return(
-    //       <li className="list-group-item ">
-    //         <div className={todoClass}>
-    //           <span className="glyphicon glyphicon-ok icon" aria-hidden="true" onClick={this.onClickDone}></span>
-    //           {this.props.item.value}
-    //           <button type="button" className="close" onClick={this.onClickClose}>&times;</button>
-    //         </div>
-    //       </li>     
-    //     );
-    // }
+ 
     render() {
+        let nutrition = new Nutrition()
+        nutrition.getResponse()
+        console.log(234)
         return (
             <li class="dt w-100 bb b--black-05 pb2 mt2 food" href="#0">
                 <div class="dtc w2 w3-ns v-mid">

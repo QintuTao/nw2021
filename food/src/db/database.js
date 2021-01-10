@@ -28,8 +28,6 @@ class DB {
     const uid = this.emailSerialize(email)
 
     const data = (await firebase.database().ref(USER_DIRECTORY).get()).child(uid)
-
-    console.log(data.key)
   }
 
   signupUser(email, password) {

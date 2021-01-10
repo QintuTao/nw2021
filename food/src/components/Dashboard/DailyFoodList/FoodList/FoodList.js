@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Nutrition from '../../../../db/nutrition';
 // import  from ./components/
 import FoodItem from "./FoodItem/FoodItem"
 // import "./DailyFoodList.css";
@@ -17,7 +18,8 @@ class FoodList extends React.Component {
         />
       );
     });
-    console.log(items)
+    const nutrition = new Nutrition()
+    nutrition.getResponse()
     return (
       <ul className="foodlist"> {items} </ul>
     );
