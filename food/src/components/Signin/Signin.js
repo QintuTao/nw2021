@@ -34,9 +34,9 @@ class Signin extends React.Component {
     const password  = this.refToPassword.current.value;
 
     /* check if email already exist */
-    const res = await db.lookupUser(email)
+    const doesExist = await db.lookupUser(email)
     this.setState({
-      doesUserExist: res
+      doesUserExist: doesExist
     })
 
     /* signIn if yes */

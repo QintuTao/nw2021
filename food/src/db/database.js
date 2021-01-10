@@ -22,13 +22,17 @@ class DB {
 
   }
 
-  signinUser(email, password) {
-    console.log(email);
+  /* an exist email account required */ 
+  async signinUser(email, password) {
+    
+    const uid = this.emailSerialize(email)
+
+    const data = (await firebase.database().ref(USER_DIRECTORY).get()).child(uid)
   }
 
   signupUser(email, password) {
     const dbRoot = firebase.database().ref()
-
+    
   }
 
   /** Helpers */
