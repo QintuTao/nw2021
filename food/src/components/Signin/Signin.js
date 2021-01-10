@@ -20,6 +20,8 @@ class Signin extends React.Component {
 
     /* bind this to functions */
     this.handleSignIn = this.handleSignIn.bind(this)
+
+    this.onRouteChange = this.props.onRouteChange;
   }
 
   validateEmail(email) {
@@ -38,7 +40,7 @@ class Signin extends React.Component {
     })
 
     /* signIn if yes */
-    
+    this.onRouteChange('profile');
   }
 
   render() {
@@ -48,7 +50,6 @@ class Signin extends React.Component {
     console.log("ii" + doesUserExist)
     return (
         <div className="pa4 black-80 background-box">
-          
           <div className="measure">
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
               <legend className="f1 fw6 ph0 mh0">Sign In</legend>
